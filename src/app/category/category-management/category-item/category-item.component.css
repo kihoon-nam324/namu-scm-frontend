@@ -1,0 +1,40 @@
+.card m-2{
+  min-width:fit-content;
+}
+
+.card-block .p-3 {
+  min-width:fit-content;
+}
+
+.btn-outline-warning {
+  margin-left: 5px !important;
+}
+
+.col-6 {
+  padding-left:0px;
+  max-width: 35%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.row {
+  min-width:max-content;
+}
+
+.container-fluid{
+  min-width:fit-content;
+}
+
+.modify-boolean {
+  min-width:fit-content;
+  padding-right:0px;
+}
+
+.modify-button-group {
+  min-width:fit-content;
+}
+
+.row > .modify-detail-content {
+  padding-right:0px;
+}

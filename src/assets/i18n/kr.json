@@ -1,0 +1,199 @@
+{   
+    "REGISTER": {
+        "REGISTER": "회원가입",
+        "EMAIL": "이메일",
+        "PASSWORD": "비밀번호",
+        "REGISTER_ACCOUNT": "회원 가입",
+        "HAVE_AN_ACCOUNT" : "로그인"
+    },
+    "LOGIN": {
+        "LOGIN": "로그인",
+        "EMAIL": "이메일",
+        "PASSWORD": "비밀번호",
+        "NEED_ACCOUNT": "회원 가입",
+        "FORGOT_PASSWORD" : "비밀번호 찾기",
+        "SIGN_IN_WITH_GOOGLE" : "Google계정으로 로그인"
+    },
+    "FORGOT_PASSWORD": {
+        "FORGOT_PASSWORD": "비밀번호 찾기",
+        "EMAIL": "이메일",
+        "SEND_LINK": "링크 전송하기",
+        "BACK_TO_LOGIN": "로그인"
+    },
+    "MAIN_DASHBOARD": {
+        "PRODUCT_MANAGEMENT_CHART": "상품 관리 차트",
+        "CATEGORY_MANAGEMENT_CHART": "카테고리 관리 차트",
+        "SELL_WAIT": "판매대기",
+        "SELL_PROCESS": "판매중",
+        "SELL_STOP": "판매중지",
+        "PRODUCT" : "상품"
+    },
+    "NAVBAR": {
+        "PRODUCT_CREATE": "상품등록",
+        "PRODUCT_SEARCH": "상품검색",
+        "PRODUCT_MANAGEMENT_SYSTEM": "상품관리 시스템",
+        "PRODUCT_NUMBER": "상품번호",
+        "LOGIN": "로그인",
+        "LOGOUT": "로그아웃"
+    },
+    "MESSAGE": {
+        "PRODUCT": "상품",
+        "CATEGORY": "카테고리",
+        "CANNOT_SEARCH_PRODUCT_MESSAGE": "상품을 찾지 못했습니다.",
+        "PRODUCT_NUMBER": "상품번호",
+        "CLOSE_CONFIRM_MESSAGE": "저장없이 화면을 닫는 경우, 수정한 내용이 반영되지 않습니다.",
+        "PRODUCT_MANAGEMENT": "[상품 관리]",
+        "CATEGORY_MANAGEMENT": "[카테고리 관리]",
+        "AUTHENTICATION_MANAGEMENT" : "[인증 관리]",
+        "ERROR": "[에러]",
+        "FAILURE": "실패",
+        "PRODUCT_FAILURE": "상품 갱신 실패",
+        "BULK_DELETE_CONFRIM_MESSAGE": "현재 페이지에 표시되는 카테고리 데이터가 삭제됩니다.",
+        "CONFRIM_BULK_CREATE_MESSGE": "카테고리 데이터를 일괄등록합니다.",
+        "CONFRIM_DELETE_MESSAGE": "복구할 수 없습니다. 삭제하겠습니까?",
+        "PRODUCT_BULK_CREATE_MESSAGE": "상품 데이터를 일괄등록합니다.",
+        "PRODUCT_CANNOT_FIND_MESSAGE": "상품을 찾지 못했습니다.",
+        "FILE_UPLOAD_ERROR_MESSAGE" : "파일 업로드가 실패했습니다. 다시 업로드 해주세요.",
+	    "FILE_UPLOAD_FAILURE_MESSAGE" : "파일 업로드에 실패했습니다.",
+        "ADD_SUCCESS_MESSAGE": "건 등록 성공",
+        "ADD_FAILURE_MESSAGE": "건 등록 실패",
+        "TRY_LOGIN": "로그인하세요.",
+        "PLEASE_ENTER_EMAIL" : "이메일을 입력해주세요.",
+        "PLEASE_ENTER_PASSWORD" : "패스워드를 입력해주세요.",
+        "LINK_HAS_SENT_CONFIRM_MESSAGE" : "링크가 등록한 이메일로 발송되었습니다. 확인해주세요.",
+        "LOGIN_FAILED" : "로그인 실패",
+        "REGISTRATION_SUCCESSFUL" : "등록 완료",
+        "SOMETHING_WENT_WRONG" : "문제가 발생했습니다.",
+        "NOT_ABLE_TO_SEND_EMAIL" : "귀하의 이메일로 메일을 보낼 수 없습니다"
+    },
+    "PAGE": {
+        "PAGE_NOT_FOUND": "페이지를 찾을 수 없습니다."
+    },
+    "SIDEBAR": {
+        "PRODUCT_MANAGEMENT": "상품 관리",
+        "CATEGORY_MANAGEMENT": "카테고리 관리"
+    },
+    "PRODUCT_MANAGEMENT": {
+        "TOTAL_COUNT": "전체상품수",
+        "PAGE_SHOW_COUNT":"페이지에 표시가능한 상품의 개수",
+        "MODIFY": "변경",
+        "PRODUCT_SELL_MODIFY_SUCCESS" : "상품판매 변경 성공",
+        "PRODUCT_SELL_MODIFY_FAILURE" : "상품판매 변경 실패",
+        "PRODUCT_SELL_STOP_MODIFY_SUCCESS" : "상품판매중지 변경 성공",
+        "PRODUCT_SELL_STOP_MODIFY_FAILURE" : "상품판매중지 변경 성공",
+        "PRODUCT_MANAGEMENT" : "[상품관리]",
+        "PRODUCT" : "상품",
+        "PRODUCT_MODAL_DELETE_MESSAGE" : "현재 체크중인 상품 데이터가 삭제됩니다"
+    },
+    "PRODUCT_LIST": {
+        "BULK": "일괄",
+        "DELETE": "삭제",
+        "SELECT": "선택",
+        "PRODUCT_NAME": "상품명",
+        "PRODUCT_UNIT_PRICE": "상품단가",
+        "PRODUCT_COUNT": "상품개수",
+        "PRODUCT_STATUS": "상품현황",
+        "SELL_WAIT": "판매대기",
+        "SELL_PROCESS": "판매중",
+        "SELL_STOP": "판매중지"
+    },
+    "BUTTON_GROUP": {
+        "SELL": "판매",
+        "SELL_STOP": "판매중지",
+        "PRODUCT_BULK_DELETE": "상품일괄삭제 (현재 페이지)",
+        "PRODUCT_BULK_CREATE": "상품일괄등록",
+        "PRODUCT": "상품"
+    },
+    "PRODUCT_DETAIL": {
+        "PRODUCT": "상품",
+        "PRODUCT_NUMBER": "상품번호",
+        "PRODUCT_NAME": "상품명",
+        "PRODUCT_UNIT_PRICE": "상품단가",
+        "PRODUCT_CATEGORY": "상품 카테고리",
+        "CHOICE_MESSAGE": "선택해주세요",
+        "USAGE_YES_NO": "사용여부",
+        "USAGE_YES": "사용",
+        "USAGE_NO": "사용 안함",
+        "PRODUCT_ITEM_COUNT": "상품수량",
+        "PRODUCT_ITEM_DETAIL": "상품 상세내용",
+        "PRODUCT_ITEM_IMAGE": "상품 이미지",
+        "PRODUCT_ITEM_CREATED_DATE": "작성일",
+        "PRODUCT_ITEM_UPDATED_DATE": "변경일",
+        "PRODUCT_ITEM_SAVE": "저장",
+        "PRODUCT_ITEM_CLEAR": "초기화",
+        "PRODUCT_ITEM_CANCEL": "취소",
+        "PRODUCT_PREVIOUS_ITEM": "이전 상품",
+        "PRODUCT_NEXT_ITEM": "다음 상품",
+        "CREATE": "등록",
+        "UPDATE": "수정",
+        "DETAIL": "조회",
+        "FINISH": "완료",
+        "FAILURE": "실패",
+        "WARN_SELECT_CATEGORY": "카테고리를 선택해주세요.",
+        "PRODUCT_MANAGEMENT_SUCCESS" : "[상품관리 성공]",
+        "PRODUCT_MANAGEMENT_FAILURE" : "[상품관리 실패]"
+    },
+    "CATEGORY_MANAGEMENT": {
+        "CATEGORY_CREATE": "카테고리 등록",
+        "CATEGORY_BULK_DELETE": "카테고리 일괄삭제 (현재 페이지)",
+        "CATEGORY_BULK_CREATE": "카테고리 일괄등록",
+        "CATEGORY_LIST": "카테고리 리스트",
+        "CATEGORY_TOTAL_COUNT": "전체 카테고리 개수",
+        "CATEGORY": "카테고리",
+        "CATEGORY_MODAL_DELETE_MESSAGE" : "현재 페이지에 표시되는 카테고리 데이터가 삭제됩니다.",
+        "CATEGORY_MODAL_BULK_CREATE_MESSAGE" : "카테고리 데이터를 일괄등록합니다."
+    },
+    "CATEGORY_ITEM": {
+        "CATEGORY_NAME": "카테고리명",
+        "USAGE_YES_NO": "사용여부",
+        "UPDATE": "수정",
+        "DELETE": "삭제",
+        "DETAIL": "상세내용"
+    },
+    "CATEGORY_DETAIL": {
+        "CATEGORY": "카테고리",
+        "NUMBER": "번호",
+        "NAME": "카테고리 이름",
+        "DETAIL": "상세내용",
+        "USAGE_YES_NO": "사용여부",
+        "USAGE_YES": "사용",
+        "USAGE_NO": "사용 안함",
+        "CREATED_DATE": "작성일",
+        "UPDATED_DATE": "변경일",
+        "SAVE": "저장",
+        "CLEAR": "초기화",
+        "CANCEL": "취소",
+        "CREATE": "등록",
+        "UPDATE": "수정",
+        "SEARCH": "조회",
+        "COMPLETE": "완료",
+        "SUCCESS": "성공",
+        "FAILURE": "실패",
+        "CATEGORY_MANAGEMENT" : "[카테고리 관리]"
+    },
+    "DELETE_MODAL": {
+        "ITEM_DELETE" : "아이템 삭제",
+        "DELETE" : "삭제",
+        "CANCEL" : "취소",
+        "MANAGEMENT": "관리",
+        "ITEM_NUMBER" : "아이템 No.",
+        "DELETE_SUCCESS" : "삭제 성공",
+	    "DELETE_FAILURE" : "삭제 실패"
+    },
+    "BULK_CREATE_MODAL": {
+        "DATA_BULK_CREATE" : "데이터 일괄등록",
+        "BULK_CREATE" : "일괄등록",
+        "CANCEL" : "취소",
+        "BULK_CREATE_SUCCESS" : "일괄등록성공",
+        "BULK_CREATE_FAILURE" : "일괄등록실패",
+        "MANAGEMENT": "관리"
+    },
+    "BULK_DELETE_MODAL": {
+        "DATA_BULK_DELETE" : "데이터 일괄삭제",
+        "BULK_DELETE" : "일괄삭제",
+        "CANCEL" : "취소",
+        "BULK_DELETE_SUCCESS" : "일괄삭제성공",
+        "BULK_DELETE_FAILURE" : "일괄삭제실패",
+        "MANAGEMENT": "관리"
+    }
+}

@@ -1,0 +1,6 @@
+<div *ngIf="image" class="preview"><img [src]="image" width="500" height="500"/></div>
+<div class="uploader-wrap" (click)="triggerClick()">
+    <input type="text" class="form-control" readonly [ngModel]="imageName"/>
+    <button type="button" class="ml-2 btn btn-success">Select</button>
+</div>
+<input type="file" class="form-control d-none" (change)="selectFile($event)"  #fileUpoader />

@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row my-4">
+      <div class="col-12">
+        <scm-button-group (onClicked)="clickedBtn($event)"></scm-button-group>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <!-- <span>全体商品数: {{totalItemCnt}}</span> -->
+        <span>{{ 'PRODUCT_MANAGEMENT.TOTAL_COUNT' | translate }}: {{totalItemCnt}}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <scm-product-list [totalItemCnt]="totalItemCnt"></scm-product-list>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-right">
+        <!-- <label for="cur-page-size">ページ表示商品数 : </label> -->
+        <label for="cur-page-size">{{ 'PRODUCT_MANAGEMENT.PAGE_SHOW_COUNT'| translate }} : </label>
+        <input type="number" id="cur-page-size" #pageSizeInput [value]="pageSize">
+        <!-- <button class="btn btn-info btn-sm" type="button" (click)="pageSizeChanged(pageSizeInput.value)">変更</button> -->
+        <button class="btn btn-info btn-sm" type="button" (click)="pageSizeChanged(pageSizeInput.value)">{{ 'PRODUCT_MANAGEMENT.MODIFY' | translate }}</button>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <ngb-pagination [pageSize]="pageSize" [collectionSize]="totalItemCnt"
+                      [maxSize]="10" [ellipses]="false" [page]="pageNo"
+                      (pageChange)="pageNoChanged($event)"></ngb-pagination>
+    </div>
+</div>

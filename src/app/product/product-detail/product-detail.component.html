@@ -1,0 +1,124 @@
+<form (ngSubmit)="submit()" [formGroup]="productForm" novalidate>
+  <h4 class="addProducttitle">{{ 'PRODUCT_DETAIL.PRODUCT' | translate }} {{ subTitle | translate }}</h4>
+  <div class="container-fluid p-2 rounded">
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="input-group-addon">{{ 'PRODUCT_DETAIL.PRODUCT_NUMBER' | translate }}</span>
+          <input type="text" class="form-control" formControlName="no" readonly />
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="input-group-addon">{{ 'PRODUCT_DETAIL.PRODUCT_NAME' | translate }}</span>
+          <input type="text" class="form-control" formControlName="name"/>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="input-group-addon">{{ 'PRODUCT_DETAIL.PRODUCT_UNIT_PRICE' | translate }}</span>
+          <input type="number" class="form-control" formControlName="listPrice"/>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="mr-3">{{ 'PRODUCT_DETAIL.PRODUCT_CATEGORY' | translate }}</span>
+          <select type="number" formControlName="catNo" required>
+            <option [value]="0">{{ 'PRODUCT_DETAIL.CHOICE_MESSAGE' | translate }}</option>
+            <option *ngFor="let cat of usedCats" [value]="cat.no">{{cat.name}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <label class="mr-3">{{ 'PRODUCT_DETAIL.USAGE_YES_NO' | translate }}:</label>
+        <label class="custom-control custom-radio">
+          <input type="radio" formControlName="isUse" class="custom-control-input" [value]="1">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">{{ 'PRODUCT_DETAIL.USAGE_YES' | translate }}</span>
+        </label>
+        <label class="custom-control custom-radio">
+          <input type="radio" formControlName="isUse" class="custom-control-input" [value]="0">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">{{ 'PRODUCT_DETAIL.USAGE_NO' | translate }}</span>
+        </label>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="input-group-addon">{{ 'PRODUCT_DETAIL.PRODUCT_ITEM_COUNT' | translate }}</span>
+          <input type="number" class="form-control" formControlName="qty"/>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        {{ 'PRODUCT_DETAIL.PRODUCT_ITEM_DETAIL' | translate }}
+        <div class="input-group">
+          <textarea class="form-control" rows="4" placeholder="{{ 'PRODUCT_DETAIL.PRODUCT_ITEM_DETAIL'| translate }}" formControlName="desc">
+          </textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <label for="photo" class="mr-3">{{ 'PRODUCT_DETAIL.PRODUCT_ITEM_IMAGE' | translate }}</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" hidden formControlName='productImage'
+            [ngClass]="{'is-invalid': submitted && productForm.controls['productImage'].invalid}">
+          <!-- <scm-file-uploader (onFileSelect)="onFileSelect($event)" [image]="productImageUrl"></scm-file-uploader> -->
+          <scm-file-uploader (onFileSelect)="onFileSelect($event)" [image]="productImageUrl"></scm-file-uploader>
+          <!-- <div class="invalid-feedback" *ngIf="submitted && productForm.controls.productImage.invalid"> -->
+            <div class="invalid-feedback" *ngIf="submitted && productForm.controls['productImage'].invalid"></div>
+            <!-- <div *ngIf="productForm.controls.productImage.errors.required">Photo is required</div> -->
+            <div *ngIf="productForm.controls['productImage'].errors">Photo is required</div>
+          <div class="text-danger" *ngIf="uploadError">{{uploadError}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="input-group-addon">{{ 'PRODUCT_DETAIL.PRODUCT_ITEM_CREATED_DATE' | translate }}</span>
+          <input type="text" class="form-control" formControlName="createdTime" readonly />
+        </div>
+      </div>
+    </div>
+    <div class="row my-4" *ngIf="actionMode !== 'create'">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="input-group-addon">{{ 'PRODUCT_DETAIL.PRODUCT_ITEM_UPDATED_DATE' | translate }}</span>
+          <input type="text" class="form-control" formControlName="updatedTime" readonly />
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12 text-right">
+        <button type="submit" class="btn btn-info btn-sm mr-2" [disabled]="!productForm.valid">
+          <i class="fa fa-check"></i> {{ 'PRODUCT_DETAIL.PRODUCT_ITEM_SAVE' | translate }}
+        </button>
+        <button type="reset" class="btn btn-info btn-sm mr-2" [disabled]="productForm.disabled">
+          <i class="fa fa-trash"></i> {{ 'PRODUCT_DETAIL.PRODUCT_ITEM_CLEAR' | translate }}
+        </button>
+        <button type="button" class="btn btn-warning btn-sm mr-2" (click)="cancel()">
+          <i class="fa fa-long-arrow-left"></i> {{ 'PRODUCT_DETAIL.PRODUCT_ITEM_CANCEL' | translate }}
+        </button>
+        <button type="button" class="btn btn-success btn-sm mr-2" [disabled]="isFirstItem()" (click)="goPrevItem()">
+          <i class="fa fa-arrow-left"></i> {{ 'PRODUCT_DETAIL.PRODUCT_PREVIOUS_ITEM' | translate }}
+        </button>
+        <button type="button" class="btn btn-success btn-sm" [disabled]="isLastItem()" (click)="goNextItem()">
+          <i class="fa fa-arrow-right"></i> {{ 'PRODUCT_DETAIL.PRODUCT_NEXT_ITEM' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+

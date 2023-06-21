@@ -1,0 +1,73 @@
+<!-- <h4>カテゴリ {{subTitle}}</h4> -->
+<form (ngSubmit)="submit()" [formGroup]="categoryForm" novalidate>
+  <h4>{{ 'CATEGORY_DETAIL.CATEGORY' | translate }} {{ subTitle | translate }}</h4>
+  <div class="container-fluid p-2 rounded">
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="input-group-addon">{{ 'CATEGORY_DETAIL.NUMBER' | translate }}</span>
+          <input type="number" class="form-control" formControlName="no" readonly/>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="input-group-addon">{{ 'CATEGORY_DETAIL.NAME' | translate }}</span>
+          <input type="text" class="form-control" formControlName="name"/>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="input-group">
+          <textarea class="form-control" rows="4" placeholder="{{ 'CATEGORY_DETAIL.DETAIL'| translate }}" formControlName="desc"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <label class="mr-3">{{ 'CATEGORY_DETAIL.USAGE_YES_NO' | translate }}:</label>
+        <label class="custom-control custom-radio">
+          <input type="radio" formControlName="isUse" class="custom-control-input" [value]="1">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">{{ 'CATEGORY_DETAIL.USAGE_YES' | translate }}</span>
+        </label>
+        <label class="custom-control custom-radio">
+          <input type="radio" formControlName="isUse" class="custom-control-input" [value]="0">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">{{ 'CATEGORY_DETAIL.USAGE_NO' | translate }}</span>
+        </label>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="input-group-addon">{{ 'CATEGORY_DETAIL.CREATED_DATE' | translate }}</span>
+          <input type="text" class="form-control" formControlName="createdTime" readonly/>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4" *ngIf="actionMode !== 'create'">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="input-group-addon">{{ 'CATEGORY_DETAIL.UPDATED_DATE' | translate }}</span>
+          <input type="text" class="form-control" formControlName="updatedTime" readonly/>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12 text-right">
+        <button type="submit" class="btn btn-info btn-sm mr-2" [disabled]="!categoryForm.valid">
+          <i class="fa fa-check"></i> {{ 'CATEGORY_DETAIL.SAVE' | translate }}
+        </button>
+        <button type="reset" class="btn btn-info btn-sm mr-2">
+          <i class="fa fa-trash"></i> {{ 'CATEGORY_DETAIL.CLEAR' | translate }}
+        </button>
+        <button type="button" class="btn btn-warning btn-sm" (click)="cancel()">
+          <i class="fa fa-times"></i> {{ 'CATEGORY_DETAIL.CANCEL' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

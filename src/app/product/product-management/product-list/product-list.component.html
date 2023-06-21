@@ -1,0 +1,31 @@
+<table class="table table-bordered">
+    <thead>
+    <tr>
+      <th class="text-center">
+        <button type="button" class="btn btn-sm btn-outline-info" (click)="toggleAllItem()">{{ 'PRODUCT_LIST.BULK'| translate }} {{ (isCheckedAnyOne() ? 'PRODUCT_LIST.DELETE'  : 'PRODUCT_LIST.SELECT') | translate}}</button>
+      </th>
+      <th class="text-center">#</th>
+      <th class="text-center">{{ 'PRODUCT_LIST.PRODUCT_NAME' | translate }}</th>
+      <th class="text-center">{{ 'PRODUCT_LIST.PRODUCT_UNIT_PRICE' | translate }}</th>
+      <th class="text-center">{{ 'PRODUCT_LIST.PRODUCT_COUNT' | translate }}</th>
+      <th class="text-center">{{ 'PRODUCT_LIST.PRODUCT_STATUS' | translate }}</th>
+      <th class="text-center">{{ 'PRODUCT_LIST.DELETE' | translate }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let prod of products; let i = index">
+      <!-- <td class="text-center"><input type="checkbox" [(ngModel)]="checkedStatus[i]" (change)="checkProduct($event.target.checked, i, prod.no)"></td> -->
+      <td class="text-center"><input type="checkbox" [(ngModel)]="checkedStatus[i]" (change)="checkProduct($event.target, i, prod.no)"></td>
+      <td>{{prod.no}}</td>
+      <td><a [routerLink]="['product', prod.no]" [queryParams]="{action: 'edit'}"><img [src]="prod.productImageUrl" class="mr-2" width="50" height="50"/>{{prod.name}}</a></td>
+      <td>{{prod.listPrice}}</td>
+      <td>{{prod.qty}}</td>
+      <td>{{prod.status | productStatus}}</td>
+      <td class="text-center">
+        <button type="button" class="btn btn-sm btn-outline-info" (click)="openDeleteModal(prod)">
+          <i class="fa fa-trash"></i> {{ 'PRODUCT_LIST.DELETE' | translate }}
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,9 @@
+.scm-footer {
+    position: fixed;
+    min-width: fit-content;
+    min-height: fit-content;
+    padding: 1rem;
+    text-align: center;
+    z-index: 1000;
+    border-top: 1px solid darkgray;
+}

@@ -1,0 +1,8 @@
+.btn-outline-primary{
+  margin-right: 10px !important;
+  min-width: fit-content;
+}
+
+.right-container {
+  position:relative;
+}

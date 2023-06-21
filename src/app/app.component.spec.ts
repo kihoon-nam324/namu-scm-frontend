@@ -1,27 +1,31 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    declarations: [AppComponent]
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        AppComponent
+      ],
+    }).compileComponents();
   }));
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
+    const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'namu-mgmt-frontend'`, () => {
+  it(`should have as title 'simple-commerce-manager'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('namu-mgmt-frontend');
+    const app = fixture.debugElement.componentInstance;
+    expect(app.title).toEqual('simple-commerce-manager');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('namu-mgmt-frontend app is running!');
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.content span').textContent).toContain('simple-commerce-manager app is running!');
   });
 });

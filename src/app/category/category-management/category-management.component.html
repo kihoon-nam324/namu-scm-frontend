@@ -1,0 +1,34 @@
+<div class="right-container">
+  <div class="container-fluid-1">
+      <div class="row">
+        <div class="col-12">
+          <button type="button" class="btn btn-outline-primary btn-sm" routerLink="/category-list/category/0" [queryParams]="{action: 'create'}">
+            <i class="fa fa-plus"></i> {{ 'CATEGORY_MANAGEMENT.CATEGORY_CREATE' | translate }}
+          </button>
+          <button type="button" class="btn btn-outline-primary btn-sm" (click)="openBulkDeleteModal()">
+            <i class="fa fa-trash"></i> {{ 'CATEGORY_MANAGEMENT.CATEGORY_BULK_DELETE' | translate }}
+          </button>
+          <!-- <button type="button" class="btn btn-outline-primary btn-sm" (click)="openBulkCreateModal()" disabled>
+            <i class="fa fa-upload"></i> {{ 'CATEGORY_MANAGEMENT.CATEGORY_BULK_CREATE' | translate }}
+          </button> -->
+        </div>
+      </div>
+  </div>
+  <div class="container-fluid-2 my-4">
+    <h4>{{ 'CATEGORY_MANAGEMENT.CATEGORY_LIST' | translate }}</h4>
+    <div class="row">
+      <div class="col-12 text-right">
+        <!-- <span>全体カテゴリ数: {{totalItemCnt}}</span> -->
+        <span>{{ 'CATEGORY_MANAGEMENT.CATEGORY_TOTAL_COUNT' | translate }}: {{totalItemCnt}}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <scm-category-item *ngFor="let category of categories" [category]="category"></scm-category-item>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <ngb-pagination [pageSize]="pageSize" [collectionSize]="totalItemCnt" [maxSize]="10" [ellipses]="false" [page]="pageNo" (pageChange)="pageNoChanged($event)"></ngb-pagination>
+    </div>
+  </div>
+</div>

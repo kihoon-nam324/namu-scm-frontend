@@ -1,0 +1,8 @@
+<button class="btn btn-info btn-sm" [disabled]="noneNo$ | async" (click)="onClicked.emit('sell')">{{ 'BUTTON_GROUP.SELL'| translate }}</button>
+<button class="btn btn-danger btn-sm" [disabled]="noneNo$ | async" (click)="onClicked.emit('stop')">{{ 'BUTTON_GROUP.SELL_STOP' | translate }}</button>
+<button type="button" class="btn btn-outline-primary btn-sm" [disabled]="noneNo$ | async" (click)="onClicked.emit('delete')">
+  <i class="fa fa-trash"></i> {{ 'BUTTON_GROUP.PRODUCT_BULK_DELETE' | translate }}
+</button>
+<!-- <button type="button" class="btn btn-outline-primary btn-sm" (click)="openBulkCreateModal()" disabled>
+  <i class="fa fa-upload"></i> {{ 'BUTTON_GROUP.PRODUCT_BULK_CREATE' | translate }}
+</button> -->

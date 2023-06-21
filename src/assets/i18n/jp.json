@@ -1,0 +1,199 @@
+{
+    "REGISTER": {
+        "REGISTER": "アカウント登録",
+        "EMAIL": "メールアドレス",
+        "PASSWORD": "パスワード",
+        "REGISTER_ACCOUNT": "アカウント登録",
+        "HAVE_AN_ACCOUNT" : "ログイン"
+    },
+    "LOGIN": {
+        "LOGIN": "ログイン",
+        "EMAIL": "メールアドレス",
+        "PASSWORD": "パスワード",
+        "NEED_ACCOUNT": "アカウント登録",
+        "FORGOT_PASSWORD" : "パスワード照会",
+        "SIGN_IN_WITH_GOOGLE" : "Googleアカウントでログイン"
+    },
+    "FORGOT_PASSWORD": {
+        "FORGOT_PASSWORD": "パスワード照会",
+        "EMAIL": "メールアドレス",
+        "SEND_LINK": "リンクを送信する",
+        "BACK_TO_LOGIN": "ログイン"
+    },
+    "MAIN_DASHBOARD": {
+        "PRODUCT_MANAGEMENT_CHART": "商品管理チャート",
+        "CATEGORY_MANAGEMENT_CHART": "カテゴリー管理チャート",
+        "SELL_WAIT": "販売待機",
+        "SELL_PROCESS": "販売中",
+        "SELL_STOP": "販売中止",
+        "PRODUCT" : "商品"
+    },
+    "NAVBAR": {
+        "PRODUCT_CREATE": "商品登録",
+        "PRODUCT_SEARCH": "商品検索",
+        "PRODUCT_NUMBER": "商品番号",
+        "PRODUCT_MANAGEMENT_SYSTEM": "商品管理システム",
+        "LOGIN": "ログイン",
+        "LOGOUT": "ログアウト"
+    },
+    "MESSAGE": {
+        "PRODUCT": "商品",
+        "CATEGORY": "カテゴリー",
+        "CANNOT_SEARCH_PRODUCT_MESSAGE": "商品を見つかりませんでした。",
+        "PRODUCT_NUMBER": "商品番号",
+        "CLOSE_CONFIRM_MESSAGE": "保存せずに戻る場合、編集した内容が反映されません。",
+        "PRODUCT_MANAGEMENT": "[商品管理]",
+        "CATEGORY_MANAGEMENT": "[カテゴリー管理]",
+        "AUTHENTICATION_MANAGEMENT" : "[認証管理]",
+        "ERROR": "[エラー]",
+        "FAILURE": "失敗",
+        "PRODUCT_FAILURE": "[商品更新失敗]",
+        "BULK_DELETE_CONFRIM_MESSAGE": "現在のページに表示されているカテゴリデータが削除されます。",
+        "CONFRIM_BULK_CREATE_MESSGE": "カテゴリーデータを一括登録します。",
+        "CONFRIM_DELETE_MESSAGE": "元に戻すことはできません。削除しますか？",
+        "PRODUCT_BULK_CREATE_MESSAGE": "商品データを一括登録します。",
+        "PRODUCT_CANNOT_FIND_MESSAGE": "商品を見つかりませんでした。",
+        "FILE_UPLOAD_ERROR_MESSAGE" : "ファイルアップロードが失敗しました。最初からやり直してください。",
+	    "FILE_UPLOAD_FAILURE_MESSAGE" : "ファイルアップロードが失敗しました。",
+        "ADD_SUCCESS_MESSAGE": "件 登録成功",
+        "ADD_FAILURE_MESSAGE": "件 登録失敗",
+        "TRY_LOGIN": "ログインしてください。",
+        "PLEASE_ENTER_EMAIL" : "メールアドレスを入力ください。",
+        "PLEASE_ENTER_PASSWORD" : "パスワードを入力ください。",
+        "LINK_HAS_SENT_CONFIRM_MESSAGE" : "リンクが登録したメールアドレスに送信されました。ご確認ください。",
+        "LOGIN_FAILED" : "ログイン失敗",
+        "REGISTRATION_SUCCESSFUL" : "登録完了",
+        "SOMETHING_WENT_WRONG" : "問題が発生しました。",
+        "NOT_ABLE_TO_SEND_EMAIL" : "ご記入いただいたメールアドレスにメールの送信が失敗しました。" 
+    },
+    "PAGE": {
+        "PAGE_NOT_FOUND": "ページを見つかりませんでした。"
+    },
+    "SIDEBAR": {
+        "PRODUCT_MANAGEMENT": "商品管理",
+        "CATEGORY_MANAGEMENT": "カテゴリー管理"
+    },
+    "PRODUCT_MANAGEMENT": {
+        "TOTAL_COUNT": "全体商品数",
+        "PAGE_SHOW_COUNT":"ページに表示可能な商品の数",
+        "MODIFY": "変更",
+        "PRODUCT_SELL_MODIFY_SUCCESS" : "商品販売 変更成功",
+        "PRODUCT_SELL_MODIFY_FAILURE" : "商品販売 変更失敗",
+        "PRODUCT_SELL_STOP_MODIFY_SUCCESS" : "商品販売中止 変更成功",
+        "PRODUCT_SELL_STOP_MODIFY_FAILURE" : "商品販売中止 変更失敗",
+        "PRODUCT_MANAGEMENT" : "[商品管理]",
+        "PRODUCT" : "商品",
+        "PRODUCT_MODAL_DELETE_MESSAGE" : "現在チェックされている商品データが削除されます。"
+    },
+    "PRODUCT_LIST": {
+        "BULK": "一括",
+        "DELETE": "解除",
+        "SELECT": "選択",
+        "PRODUCT_NAME": "商品名",
+        "PRODUCT_UNIT_PRICE": "商品価格",
+        "PRODUCT_COUNT": "商品数",
+        "PRODUCT_STATUS": "商品ステータス",
+        "SELL_WAIT": "販売待機",
+        "SELL_PROCESS": "販売中",
+        "SELL_STOP": "販売中止"
+    },
+    "BUTTON_GROUP": {
+        "SELL": "販売",
+        "SELL_STOP": "販売中止",
+        "PRODUCT_BULK_DELETE": "商品一括削除（現在のページ）",
+        "PRODUCT_BULK_CREATE": "商品一括登録",
+        "PRODUCT": "商品"
+    },
+    "PRODUCT_DETAIL": {
+        "PRODUCT": "商品",
+        "PRODUCT_NUMBER": "商品番号",
+        "PRODUCT_NAME": "商品名",
+        "PRODUCT_UNIT_PRICE": "商品価格",
+        "PRODUCT_CATEGORY": "商品カテゴリー",
+        "CHOICE_MESSAGE": "選択ください",
+        "USAGE_YES_NO": "使用有無",
+        "USAGE_YES": "使用",
+        "USAGE_NO": "使用しない",
+        "PRODUCT_ITEM_COUNT": "商品数量",
+        "PRODUCT_ITEM_DETAIL": "商品詳細",
+        "PRODUCT_ITEM_IMAGE": "商品イメージ",
+        "PRODUCT_ITEM_CREATED_DATE": "作成日付",
+        "PRODUCT_ITEM_UPDATED_DATE": "更新日付",
+        "PRODUCT_ITEM_SAVE": "保存",
+        "PRODUCT_ITEM_CLEAR": "クリア",
+        "PRODUCT_ITEM_CANCEL": "キャンセル",
+        "PRODUCT_PREVIOUS_ITEM": "前の商品",
+        "PRODUCT_NEXT_ITEM": "次の商品",
+        "CREATE": "登録",
+        "UPDATE": "編集",
+        "DETAIL": "照会",
+        "FINISH": "完了",
+        "FAILURE": "失敗",
+        "WARN_SELECT_CATEGORY": "カテゴリーを選択ください。",
+        "PRODUCT_MANAGEMENT_SUCCESS" : "[商品管理 成功]",
+        "PRODUCT_MANAGEMENT_FAILURE" : "[商品管理 失敗]"
+    },
+    "CATEGORY_MANAGEMENT": {
+        "CATEGORY_CREATE": "カテゴリ一登録",
+        "CATEGORY_BULK_DELETE": "カテゴリ一括削除（現在のページ）",
+        "CATEGORY_BULK_CREATE": "カテゴリ一括登録",
+        "CATEGORY_LIST": "カテゴリ一リスト",
+        "CATEGORY_TOTAL_COUNT": "全体カテゴリ一の数",
+        "CATEGORY": "カテゴリ一",
+        "CATEGORY_MODAL_DELETE_MESSAGE" : "現在のページに表示されているカテゴリデータが削除されます。",
+        "CATEGORY_MODAL_BULK_CREATE_MESSAGE" : "カテゴリデータを一括登録します。"
+    },
+    "CATEGORY_ITEM": {
+        "CATEGORY_NAME": "カテゴリー名",
+        "USAGE_YES_NO": "使用有無",
+        "UPDATE": "編集",
+        "DELETE": "削除",
+        "DETAIL": "詳細"
+    },
+    "CATEGORY_DETAIL": {
+        "CATEGORY": "カテゴリー",
+        "NUMBER": "番号",
+        "NAME": "カテゴリー名",
+        "DETAIL": "カテゴリー詳細",
+        "USAGE_YES_NO": "使用有無",
+        "USAGE_YES": "使用",
+        "USAGE_NO": "使用しない",
+        "CREATED_DATE": "作成日付",
+        "UPDATED_DATE": "変更日付",
+        "SAVE": "保存",
+        "CLEAR": "クリア",
+        "CANCEL": "キャンセル",
+        "CREATE": "登録",
+        "UPDATE": "修正",
+        "SEARCH": "照会",
+        "COMPLETE": "完了",
+        "SUCCESS": "成功",
+        "FAILURE": "失敗",
+        "CATEGORY_MANAGEMENT" : "[カテゴリー管理]"
+    },
+    "DELETE_MODAL": {
+        "ITEM_DELETE" : "アイテム削除",
+        "DELETE" : "削除",
+        "CANCEL" : "キャンセル",
+        "MANAGEMENT": "管理",
+        "ITEM_NUMBER" : "アイテム No.",
+        "DELETE_SUCCESS" : "削除成功",
+	    "DELETE_FAILURE" : "削除失敗"
+    },
+    "BULK_CREATE_MODAL": {
+        "DATA_BULK_CREATE" : "データ一括登録",
+        "BULK_CREATE" : "一括登録",
+        "CANCEL" : "キャンセル",
+        "BULK_CREATE_SUCCESS" : "一括登録成功",
+        "BULK_CREATE_FAILURE" : "一括登録失敗",
+        "MANAGEMENT": "管理"
+    },
+    "BULK_DELETE_MODAL": {
+        "DATA_BULK_DELETE" : "データ一括削除",
+        "BULK_DELETE" : "一括削除",
+        "CANCEL" : "キャンセル",
+        "BULK_DELETE_SUCCESS" : "一括削除成功",
+        "BULK_DELETE_FAILURE" : "一括削除失敗",
+        "MANAGEMENT": "管理"
+    }
+}

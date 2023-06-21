@@ -1,0 +1,27 @@
+<nav class="navbar navbar-toggleable fixed-top scm-navbar">
+  <!-- <a class="navbar-brand text-white" href="/">{{appTitle}}</a> -->
+  <a class="navbar-brand text-white" routerLink="dashboard">{{ 'NAVBAR.PRODUCT_MANAGEMENT_SYSTEM' | translate }}</a>
+  <div class="collapse navbar-collapse d-flex justify-content-end" id="nav-bar">
+    <select 
+      class="btn btn-warning mr-2"
+      #selectedLang
+      (change)="switchLang(selectedLang.value)">
+      <option *ngFor="let language of translate.getLangs()"
+        [value]="language"
+        [selected]="language === translate.currentLang">
+        {{ language.toUpperCase() }} 
+        </option>
+    </select>
+    <button class="btn btn-warning mr-2"
+      routerLink="/product-list/product/0" [queryParams]="{action: 'create'}">
+      <i class="fa fa-plus"></i> {{ 'NAVBAR.PRODUCT_CREATE' | translate }}
+    </button>
+    <form class="form-inline">
+      <!-- <input class="form-control mr-2" type="text" placeholder="{{ 'NAVBAR.PRODUCT_NUMBER'| translate }}" #searchInput> -->
+      <input class="form-control mr-2" type="text" placeholder="{{ 'NAVBAR.PRODUCT_NUMBER'| translate }}" #searchInput>
+      <!-- <button class="btn btn-warning" type="button" (click)="searchProduct(searchInput.value)">商品検索</button> -->
+      <button class="btn btn-warning" type="button" (click)="searchProduct(+searchInput.value)">{{ 'NAVBAR.PRODUCT_SEARCH' | translate }}</button>
+    </form>
+    <button class="btn btn-warning ml-2" (click)="checkSession()">{{ sessionBtnName | translate }}</button>
+  </div>
+</nav>

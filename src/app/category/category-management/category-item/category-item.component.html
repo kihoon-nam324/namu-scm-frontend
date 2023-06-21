@@ -1,0 +1,33 @@
+<div class="card m-2">
+    <div class="card-block p-3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-1">{{category.no}}</div>
+          <div class="col-6">
+            <label class="card-title mr-2">{{ 'CATEGORY_ITEM.CATEGORY_NAME' | translate }}:</label>
+            <span class="btn-link" routerLink="/category-list/category/{{category.no}}"
+                  [queryParams]="{action: 'read'}">{{category.name}}</span>
+          </div>
+          <div class="col-3 modify-boolean">
+            <label class="card-title mr-2">{{ 'CATEGORY_ITEM.USAGE_YES_NO' | translate }}:</label>
+            <span class="badge badge-pill badge-primary">{{category.isUse==1 ? true : false}}</span>
+          </div>
+          <div class="col-2 text-right modify-button-group">
+            <button type="button" class="btn btn-sm btn-outline-warning"
+                    routerLink="/category-list/category/{{category.no}}" [queryParams]="{action: 'edit'}">
+              <i class="fa fa-edit"></i> {{ 'CATEGORY_ITEM.UPDATE' | translate }}
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-warning" (click)="openDeleteModal(category)">
+              <i class="fa fa-trash"></i> {{ 'CATEGORY_ITEM.DELETE' | translate }}
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2 modify-detail-content" >{{ 'CATEGORY_ITEM.DETAIL' | translate }}:</div>
+          <div class="col-10">
+            <textarea class="form-control" rows="2" readonly>{{category.desc}}</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

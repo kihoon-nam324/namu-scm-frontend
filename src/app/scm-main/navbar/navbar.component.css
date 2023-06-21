@@ -1,0 +1,26 @@
+.navbar {
+    flex-direction : initial;
+    min-width: max-content;
+}
+
+#nav-bar{
+    position:initial;
+    min-width: max-content;
+}
+
+.fixed-top {
+    justify-content: space-between;
+}
+
+.scm-navbar {
+    border-bottom: 1px solid darkgray;
+    background-color: #3d4752;
+} 
+
+.form-inline{
+    flex-flow: inherit;
+}
+
+.form-inline > input {
+    width:fit-content;
+}
