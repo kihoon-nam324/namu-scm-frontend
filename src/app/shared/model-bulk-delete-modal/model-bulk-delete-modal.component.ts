@@ -6,6 +6,7 @@ import { CurrentPageCategorySetService } from 'src/app/category/category-managem
 import { CategoryBulkDeleteService } from 'src/app/category/category-management/category-bulk-delete.service';
 import { ProductBulkDeleterService } from 'src/app/product/product-management/product-bulk-deleter.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'scm-model-bulk-delete-modal',
@@ -20,7 +21,7 @@ import { TranslateService } from '@ngx-translate/core';
       <p>{{message}}</p>
     </div>
     <div class="modal-footer">
-      <!-- <button type="button" class="btn btn-info btn-sm mr-2" (click)="bulkDelete(); activeModal.close('Close click')">{{ 'BULK_DELETE_MODAL.BULK_DELETE' | translate }}</button> -->
+      <button type="button" class="btn btn-info btn-sm mr-2" (click)="bulkDelete(); activeModal.close('Close click')">{{ 'BULK_DELETE_MODAL.BULK_DELETE' | translate }}</button>
       <button type="button" class="btn btn-warning btn-sm mr-2" (click)="resetNoSet(); activeModal.close('Close click')">{{ 'BULK_DELETE_MODAL.CANCEL' | translate }}</button>
     </div>
   `,
@@ -62,43 +63,45 @@ export class ModelBulkDeleteModalComponent implements AfterViewInit {
     }
   }
 
-  //bulkDelete(): void {
-  // bulkDelete(): void {
-  //   if (this.modelName === 'category') {
-  //     this.categoryBulkDeleteService.bulkDeleteStart().subscribe(
-  //       //(successIds) => {
-  //       (successIds: any[]) => {
-  //         this.resetNoSet();
-  //         this.toastr.success(`${this.title}${this.translate.instant('BULK_DELETE_MODAL.BULK_DELETE_SUCCESS')}<br>ID: ${successIds.join(', ')}`
-  //         , `[${this.title}${this.translate.instant('BULK_DELETE_MODAL.MANAGEMENT')}]`
-  //         , {enableHtml: true});
-  //         this.redirectToModelList();
-  //       },
-  //       (e: Error) => {
-  //         this.resetNoSet();
-  //         this.toastr.error(`${this.title}${this.translate.instant('BULK_DELETE_MODAL.BULK_DELETE_FAILURE')}<br>ID: ${e.message}`
-  //         , `[${this.title}${this.translate.instant('BULK_DELETE_MODAL.MANAGEMENT')}]`
-  //         , {enableHtml: true});
-  //         this.redirectToModelList();
-  //       }
-  //     );
-  //   } else if (this.modelName === 'product') {
-  //     this.productBulkDeleterService.bulkDeleteStart().subscribe(
-  //       (successIds) => {
-  //         this.toastr.success(`${this.title}${this.translate.instant('BULK_DELETE_MODAL.BULK_DELETE_SUCCESS')}<br>ID: ${successIds.join(', ')}`
-  //         , `[${this.title}${this.translate.instant('BULK_DELETE_MODAL.MANAGEMENT')}]`
-  //         , {enableHtml: true});
-  //         this.redirectToModelList();
-  //       },
-  //       (e: Error) => {
-  //         this.toastr.error(`${this.title}${this.translate.instant('BULK_DELETE_MODAL.BULK_DELETE_FAILURE')}<br>ID: ${e.message}`
-  //         , `[${this.title}${this.translate.instant('BULK_DELETE_MODAL.MANAGEMENT')}]`
-  //         , {enableHtml: true});
-  //         this.redirectToModelList();
-  //       }
-  //     );
-  //   }
-  // }
+  //bulkDelete(): Observable<any> {
+  bulkDelete() :void {  
+    // if (this.modelName === 'category') {
+    //   //this.categoryBulkDeleteService.bulkDeleteStart().subscribe(
+    //   this.categoryBulkDeleteService.bulkDeleteStart().toPromise().then(  
+    //     //(successIds) => {
+    //     (successIds: any[]) => {
+    //       this.resetNoSet();
+    //       this.toastr.success(`${this.title}${this.translate.instant('BULK_DELETE_MODAL.BULK_DELETE_SUCCESS')}<br>ID: ${successIds.join(', ')}`
+    //       , `[${this.title}${this.translate.instant('BULK_DELETE_MODAL.MANAGEMENT')}]`
+    //       , {enableHtml: true});
+    //       this.redirectToModelList();
+    //     },
+    //     (e: Error) => {
+    //       this.resetNoSet();
+    //       this.toastr.error(`${this.title}${this.translate.instant('BULK_DELETE_MODAL.BULK_DELETE_FAILURE')}<br>ID: ${e.message}`
+    //       , `[${this.title}${this.translate.instant('BULK_DELETE_MODAL.MANAGEMENT')}]`
+    //       , {enableHtml: true});
+    //       this.redirectToModelList();
+    //     }
+    //   );
+    // } else if (this.modelName === 'product') {
+    //   //this.productBulkDeleterService.bulkDeleteStart().subscribe(
+    //   this.productBulkDeleterService.bulkDeleteStart().toPromise().then( 
+    //     (successIds) => {
+    //       this.toastr.success(`${this.title}${this.translate.instant('BULK_DELETE_MODAL.BULK_DELETE_SUCCESS')}<br>ID: ${successIds.join(', ')}`
+    //       , `[${this.title}${this.translate.instant('BULK_DELETE_MODAL.MANAGEMENT')}]`
+    //       , {enableHtml: true});
+    //       this.redirectToModelList();
+    //     },
+    //     (e: Error) => {
+    //       this.toastr.error(`${this.title}${this.translate.instant('BULK_DELETE_MODAL.BULK_DELETE_FAILURE')}<br>ID: ${e.message}`
+    //       , `[${this.title}${this.translate.instant('BULK_DELETE_MODAL.MANAGEMENT')}]`
+    //       , {enableHtml: true});
+    //       this.redirectToModelList();
+    //     }
+    //   );
+    // }
+  }
 
   resetNoSet(): void {
     if (this.modelName === 'category') {

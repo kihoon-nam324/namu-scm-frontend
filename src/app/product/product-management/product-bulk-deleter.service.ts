@@ -17,29 +17,29 @@ export class ProductBulkDeleterService {
       return prod;
     };
 
-    //return this._bulkDelete(modifyProductFn);
+    return this._bulkDelete(modifyProductFn);
   }
 
   //private _bulkDelete(deleteFn: (Product) => Product) {
   
-  // private _bulkDelete(deleteFn: (arg0: Product) => Product) {
-  //   const delete$ = this.prodSet.nos$()
-  //     .pipe(mergeMap((no: number) => this.database.findObject$<Product>('product', no)
-  //     .pipe(take(1))))
-  //     .pipe(map(product => {
-  //       if (product) {
-  //         return product;
-  //       }
-  //       throw new Error('failed to fetch value');
-  //       }
-  //     ))
-  //     .pipe(tap(deleteFn))
-  //     .pipe(mergeMap(prod =>
-  //       this.database.delete('product', prod.no, prod.productImage).toPromise().then(() => [true, prod.no]).catch((e) => [false, prod.no])
-  //     ));
+  private _bulkDelete(deleteFn: (Product: any) => Product) {
+    const delete$ = this.prodSet.nos$()
+      .pipe(mergeMap((no: number) => this.database.findObject$<Product>('product', no)))
+      .pipe(take(1))
+      .pipe(map(product => {
+        if (product) {
+          return product;
+        }
+        throw new Error('failed to fetch value');
+        }
+      ))
+      .pipe(tap(deleteFn))
+      .pipe(mergeMap(prod =>
+        this.database.delete('product', prod.no, prod.productImage).toPromise().then(() => [true, prod.no]).catch((e) => [false, prod.no])
+      ));
 
-  //   return this.handleBulkDelete$(delete$);
-  // }
+    return this.handleBulkDelete$(delete$);
+  }
 
   private handleBulkDelete$(delete$: Observable<any>) {
 

@@ -16,9 +16,6 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit, OnDestroy {
-  pageNoChanged(pageNo: number) {
-    throw new Error('Method not implemented.');
-  }
   @Input() totalItemCnt = 0;
   pageNo = 1;
   pageSize: number;
@@ -49,8 +46,8 @@ export class ProductListComponent implements OnInit, OnDestroy {
     this.prodSet.initProdNos();
   }
 
-  //ageNoChanged(pageNo) {
-  ageNoChanged(pageNo: number) {
+  //pageNoChanged(pageNo) {
+  pageNoChanged(pageNo: number) {
     this.pageNo = pageNo;
     this.initCheckedProducts();
     this.getPagedList();

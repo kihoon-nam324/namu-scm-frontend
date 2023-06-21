@@ -3,14 +3,14 @@
     <div class="row mb-5">
       <div class="chart" *ngIf="fetchBarChartData">
         <!-- <canvas baseChart [datasets]="barData" [labels]="productLabel"  [chartType]="'horizontalBar'" [options]="barChartOptions" width="800"></canvas> -->
-        <canvas baseChart [datasets]="barData" [labels]="productLabel" [options]="barChartOptions" width="800"></canvas>
+        <canvas baseChart [type]="'bar'" [datasets]="barData" [labels]="productLabel" [options]="barChartOptions" width="800"></canvas>
       </div>
     </div>
     <h4>{{ 'MAIN_DASHBOARD.CATEGORY_MANAGEMENT_CHART' | translate }}</h4>
     <div class="row">
       <div class="chart" *ngIf="fetchPieChartData">
         <!-- <canvas baseChart [data]="pieData" [labels]="pieChartLabels" [chartType]="'pie'" width="600"></canvas> -->
-        <canvas baseChart [datasets]="pieData" [labels]="pieChartLabels" width="600"></canvas>
+        <canvas baseChart [type]="'pie'" [datasets]="pieDataSets" [labels]="pieChartLabels" width="600"></canvas>
       </div>
     </div>
   </div>

@@ -30,51 +30,25 @@ export class ProductBulkUpdaterService {
 
     return this._bulkUpdate(modifyProductFn);
   }
-
-  //private _bulkUpdate(updateFn: (Product) => Product) {
   
   private _bulkUpdate(updateFn: (Product: any) => Product) {
-    // const update$ = this.prodSet.nos$()
-    // .pipe(
-    //   mergeMap((no: number) =>
-    //     this.database.findObject$<Product>('product', no).pipe(take(1))
-    //   ),
-    //   map((product: Product) => {
-    //     if (product) { return product; }
-    //     throw new Error('failed to fetch value');
-    //   }),
-    //   tap(updateFn),
-    //   mergeMap((prod: Product) =>
-    //     this.database
-    //       .update('product', prod)
-    //       .then(() => [true, prod.no])
-    //       .catch((e) => [false, prod.no])
-    //   )
-    // );
-
-    // return this.handleBulkUpdate$(update$);
-
-
-    // const update$ = this.prodSet.nos$()
-    //   //.pipe(mergeMap((no: number) => this.database.findObject$<Product>('product', no)
-    //   .pipe(mergeMap((no: number) => this.database.findObject$<Product>('product', no)
-    //   .pipe(take(1))))
-    //   //.pipe(map(product => {
-    //   .pipe(map(product => {
-    //     if (product) {
-    //       return product;
-    //     }
-
-    //     throw new Error('failed to fetch value');
-
-    //     }
-    //   ))
-    //   .pipe(tap(updateFn))
-    //   .pipe(mergeMap(prod =>
-    //     this.database.update('product', prod).toPromise().then(() => [true, prod.no]).catch((e) => [false, prod.no])
-    //   ));
-
-    // return this.handleBulkUpdate$(update$);
+    const update$ = this.prodSet.nos$()
+      //.pipe(mergeMap((no: number) => this.database.findObject$<Product>('product', no)
+      .pipe(mergeMap((no: number) => this.database.findObject$<Product>('product', no)
+      .pipe(take(1))))
+      //.pipe(map(product => {
+      .pipe(map(product => {
+          if (product) {
+            return product;
+          }
+          throw new Error('failed to fetch value');
+        }
+      ))
+      .pipe(tap(updateFn))
+      .pipe(mergeMap(prod =>
+        this.database.update('product', prod).toPromise().then(() => [true, prod.no]).catch((e) => [false, prod.no])
+      ));
+    return this.handleBulkUpdate$(update$);
   }
 
   private handleBulkUpdate$(update$: Observable<any>) {

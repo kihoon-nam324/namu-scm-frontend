@@ -30,9 +30,9 @@ export class CurrentPageCategorySetService {
   }
 
   //nos$() {
-  nos$(): Observable<number[]> {
+  nos$(): Observable<number> {
     //return from(Array.from(this.categoryNoSet));
-    return from(Array.from(this.categoryNoSet)) as Observable<number[]>;
+    return from(Array.from(this.categoryNoSet)) as Observable<number>;
   }
 
   private _notifyExistence() {

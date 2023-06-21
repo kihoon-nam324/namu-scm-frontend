@@ -6,7 +6,7 @@ import { zip, from, Observable, of, throwError } from 'rxjs';
 import { map, tap, take, mergeMap, filter, concatMap, finalize } from 'rxjs/operators';
 import { SpinnerService } from '../../shared/loading-spinner/spinner.service';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { ChartConfiguration } from 'chart.js';
+import { ChartConfiguration, ChartOptions } from 'chart.js';
 
 @Component({
   selector: 'scm-main-dashboard',
@@ -16,13 +16,6 @@ import { ChartConfiguration } from 'chart.js';
 })
 export class MainDashboardComponent implements OnInit {
   fetchBarChartData = false;
-  // barData: any[];
-  // barChartLabel1: string;
-  // barChartLabel2: string;
-  // barChartLabel3: string;
-  // barChartLabels: string[];
-  // barChartOptions;
-  // productLabel;
   barData!: any[];
   barChartLabel1!: string;
   barChartLabel2!: string;
@@ -32,11 +25,13 @@ export class MainDashboardComponent implements OnInit {
   productLabel: any;
 
   fetchPieChartData = false;
-  // pieData: number[];
-  // pieChartLabels: string[];
+  pieDataSets!: any[];
   pieData!: number[];
   pieChartLabels!: string[];
   barChartType: any;
+  // pieChartOptions: ChartOptions<'pie'> = {
+  //   responsive: false,
+  // };
 
   constructor(private database: DataStoreService, 
     private spinner: SpinnerService,
@@ -62,6 +57,7 @@ export class MainDashboardComponent implements OnInit {
     this.barData = [];
     this.pieData = [];
     this.pieChartLabels = [];
+    this.pieDataSets = [];
     this.resetChartLabel();
     this.makeBarChart();
     this.makePieChart();
@@ -135,12 +131,13 @@ export class MainDashboardComponent implements OnInit {
           .pipe(map((products: any) => [cat, products.length]))
       ))
       .pipe(tap((result: any) => {
-        console.log("result : ",result);
         this.pieData.push(result[1]);
         this.pieChartLabels.push(result[0].name);
       }))
       .subscribe({
         complete: () => {
+          this.pieDataSets = [ { data : this.pieData } ];
+
           this.spinner.stop();
           this.fetchPieChartData = true;
         }

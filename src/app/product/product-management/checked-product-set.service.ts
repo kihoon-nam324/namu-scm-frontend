@@ -29,8 +29,10 @@ export class CheckedProductSetService {
     this._notifyExistence();
   }
 
-  nos$() {
-    return from(Array.from(this.prodNoSet));
+  //nos$() {
+  nos$() : Observable<number> {
+    //return from(Array.from(this.prodNoSet));
+    return from(Array.from(this.prodNoSet)) as Observable<number>;
   }
 
   private _notifyExistence() {
