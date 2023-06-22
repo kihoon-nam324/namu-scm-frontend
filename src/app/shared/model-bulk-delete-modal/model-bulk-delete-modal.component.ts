@@ -32,13 +32,10 @@ export class ModelBulkDeleteModalComponent implements AfterViewInit {
   // @Input() message: string;
   // @Input() modelList: any;
   // @Input() modelName: ScmDomain;
-  @Input()
-  title!: string;
-  @Input()
-  message!: string;
+  @Input() title!: string;
+  @Input() message!: string;
   @Input() modelList: any;
-  @Input()
-  modelName!: ScmDomain;
+  @Input() modelName!: ScmDomain;
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -48,6 +45,14 @@ export class ModelBulkDeleteModalComponent implements AfterViewInit {
     private toastr: ToastrService,
     private translate: TranslateService
   ) {
+  }
+
+  ngOnInit() {
+    const backdrop = document.querySelector('.modal-backdrop');
+    if (backdrop) {
+      //backdrop.setAttribute('style', 'z-index: 20 !important'); // 변경할 z-index 값
+      backdrop.setAttribute('style', 'z-index: 1001 !important'); // 변경할 z-index 값
+    }
   }
 
   ngAfterViewInit() {

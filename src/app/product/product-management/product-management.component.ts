@@ -60,47 +60,47 @@ export class ProductManagementComponent implements OnInit {
   }
 
   private setBtnClickHandler() {
-    // const clickedSell = () => {
-    //   this.productBulkUpdater.updateProductsToSell()
-    //     .subscribe(
-    //       (successIds) => {
-    //         this.productListComponent.getPagedList();
-    //         this.toastr.success(`${this.translate.instant('PRODUCT_MANAGEMENT.PRODUCT_SELL_MODIFY_SUCCESS')}<br>ID: ${successIds.join(', ')}`
-    //         , `${this.translate.instant('PRODUCT_MANAGEMENT.PRODUCT_MANAGEMENT')}`
-    //         , {enableHtml: true});
-    //       },
-    //       (e: Error) => {
-    //         this.toastr.error(`${this.translate.instant('PRODUCT_MANAGEMENT.PRODUCT_SELL_MODIFY_FAILURE')}<br>ID: ${e.message}`
-    //         , `${this.translate.instant('PRODUCT_MANAGEMENT.PRODUCT_MANAGEMENT')}`
-    //         , {enableHtml: true});
-    //       }
-    //     );
-    // };
+    const clickedSell = () => {
+      this.productBulkUpdater.updateProductsToSell()
+        .subscribe(
+          (successIds) => {
+            this.productListComponent.getPagedList();
+            this.toastr.success(`${this.translate.instant('PRODUCT_MANAGEMENT.PRODUCT_SELL_MODIFY_SUCCESS')}<br>ID: ${successIds.join(', ')}`
+            , `${this.translate.instant('PRODUCT_MANAGEMENT.PRODUCT_MANAGEMENT')}`
+            , {enableHtml: true});
+          },
+          (e: Error) => {
+            this.toastr.error(`${this.translate.instant('PRODUCT_MANAGEMENT.PRODUCT_SELL_MODIFY_FAILURE')}<br>ID: ${e.message}`
+            , `${this.translate.instant('PRODUCT_MANAGEMENT.PRODUCT_MANAGEMENT')}`
+            , {enableHtml: true});
+          }
+        );
+    };
 
 
-    // const clickedStop = () => {
-    //   this.productBulkUpdater.updateProductsToStop()
-    //     .subscribe(
-    //       (successIds) => {
-    //         this.productListComponent.getPagedList();
-    //         this.toastr.success(`${this.translate.instant('PRODUCT_MANAGEMENT.PRODUCT_SELL_STOP_MODIFY_SUCCESS')}<br>ID: ${successIds.join(', ')}`
-    //         , `${this.translate.instant('PRODUCT_MANAGEMENT.PRODUCT_MANAGEMENT')}`
-    //         , {enableHtml: true});
-    //       },
-    //       (e: Error) => {
-    //         this.toastr.error(`${this.translate.instant('PRODUCT_MANAGEMENT.PRODUCT_SELL_STOP_MODIFY_FAILURE')}<br>ID: ${e.message}`
-    //         , `${this.translate.instant('PRODUCT_MANAGEMENT.PRODUCT_MANAGEMENT')}`
-    //         , {enableHtml: true});
-    //       }
-    //     );
-    // };
+    const clickedStop = () => {
+      this.productBulkUpdater.updateProductsToStop()
+        .subscribe(
+          (successIds) => {
+            this.productListComponent.getPagedList();
+            this.toastr.success(`${this.translate.instant('PRODUCT_MANAGEMENT.PRODUCT_SELL_STOP_MODIFY_SUCCESS')}<br>ID: ${successIds.join(', ')}`
+            , `${this.translate.instant('PRODUCT_MANAGEMENT.PRODUCT_MANAGEMENT')}`
+            , {enableHtml: true});
+          },
+          (e: Error) => {
+            this.toastr.error(`${this.translate.instant('PRODUCT_MANAGEMENT.PRODUCT_SELL_STOP_MODIFY_FAILURE')}<br>ID: ${e.message}`
+            , `${this.translate.instant('PRODUCT_MANAGEMENT.PRODUCT_MANAGEMENT')}`
+            , {enableHtml: true});
+          }
+        );
+    };
     const clickedDelete = () => {
       this.openBulkDeleteModal();
     };
 
     this.clickedHandler = {
-      //sell: clickedSell,
-      //stop: clickedStop,
+      sell: clickedSell,
+      stop: clickedStop,
       delete: clickedDelete
     };
   }

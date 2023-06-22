@@ -20,11 +20,15 @@ export class CategoryItemComponent implements OnInit {
   }
 
   //openDeleteModal(category) {
-  openDeleteModal(category: any) {
+  openDeleteModal(category: Category) {
+    //const modalRef = this.modelDeleteModalService.open(ModelDeleteModalComponent);
     const modalRef = this.modelDeleteModalService.open(ModelDeleteModalComponent);
     modalRef.componentInstance.title = this.translate.instant('MESSAGE.CATEGORY');
     modalRef.componentInstance.message = this.translate.instant('MESSAGE.CONFRIM_DELETE_MESSAGE');
     modalRef.componentInstance.model = category;
     modalRef.componentInstance.modelName = 'category';
+
+    
+
   }
 }

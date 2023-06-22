@@ -18,12 +18,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit, CanComponentDeactivate {
-  // subTitle: string;
-  // actionMode: ActionMode;
-  // productForm: FormGroup;
-  // usedCats: Categories;
-  // private prodNo: number;
-  // private totalItemCnt;
   subTitle!: string;
   actionMode: ActionMode = "create";
   productForm!: FormGroup;
@@ -89,34 +83,6 @@ export class ProductDetailComponent implements OnInit, CanComponentDeactivate {
         this.usedCats = data[1];
       });
     this.database.count('product').subscribe(cnt => this.totalItemCnt = cnt);
-
-
-//this.route.queryParams.pipe(filter(q => q.action !== undefined))
-//     this.route.queryParams.pipe(filter(q => q['action'] !== undefined))
-//       .pipe(tap(q => this._setActionMode(q)))
-//       .pipe(switchMap(q => this.route.data))
-//       //.pipe(map((data: {detail: any}) => data.detail))
-//       .pipe(map((data: {detail: any}) => data.detail))
-//       .subscribe(data => {
-//         //.subscribe((data : any) => {
-//         const prod: Product = data[0];
-//         this.prodNo = prod.no;
-//         prod.createdTime = prod.createdTime.replace('T', ' ');
-//         this.productImageUrl = prod.productImageUrl;
-//         //this.productImage = prod.productImage;
-//         this.productImage = prod.productImage ? prod.productImage : '';
-//         //this.origProductImage = prod.productImage;
-//         this.origProductImage = prod.productImage ? prod.productImage : '';
-
-//         if ( this.actionMode === 'edit' ) {
-//           //prod.updatedTime = (prod.updatedTime === '0001-01-01T00:00:00') ? null : prod.updatedTime.replace('T', ' ');
-//           prod.updatedTime = (prod.updatedTime === '0001-01-01T00:00:00') ? '': prod.updatedTime.replace('T', ' ');
-//         }
-//         this.productForm.patchValue(prod);
-    
-//         this.usedCats = data[1];
-//       });
-//     this.database.count('product').subscribe(cnt => this.totalItemCnt = cnt);
   }
 
   canDeactivate() {

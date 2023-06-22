@@ -7,21 +7,22 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'scm-delete-modal-window',
-  template: `
-    <div class="modal-header">
-      <h4 class="modal-title">{{title}}{{ 'DELETE_MODAL.ITEM_DELETE' | translate }}</h4>
-      <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <p>{{message}}</p>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="delete(model); activeModal.close('Close click')">{{ 'DELETE_MODAL.DELETE' | translate }}</button>
-      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">{{ 'DELETE_MODAL.CANCEL' | translate }}</button>
-    </div>
-  `,
+  templateUrl: 'model-delete-modal.component.html',
+  // template: `
+  //   <div class="modal-header">
+  //     <h4 class="modal-title">{{title}}{{ 'DELETE_MODAL.ITEM_DELETE' | translate }}</h4>
+  //     <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+  //       <span aria-hidden="true">&times;</span>
+  //     </button>
+  //   </div>
+  //   <div class="modal-body">
+  //     <p>{{message}}</p>
+  //   </div>
+  //   <div class="modal-footer">
+  //     <button type="button" class="btn btn-outline-dark" (click)="delete(model); activeModal.close('Close click')">{{ 'DELETE_MODAL.DELETE' | translate }}</button>
+  //     <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">{{ 'DELETE_MODAL.CANCEL' | translate }}</button>
+  //   </div>
+  // `,
   styleUrls: ['model-delete-modal.component.css']
 })
 export class ModelDeleteModalComponent {
@@ -30,8 +31,8 @@ export class ModelDeleteModalComponent {
   // @Input() model: any;
   // @Input() modelName: ScmDomain;
 
-  @Input() title: string | undefined;
-  @Input() message: string | undefined;
+  @Input() title!: string;
+  @Input() message!: string;
   @Input() model: any;
   @Input() modelName!: ScmDomain;
 
@@ -40,7 +41,17 @@ export class ModelDeleteModalComponent {
     private database: DataStoreService,
     private toastr: ToastrService,
     private translate: TranslateService
-  ) {}
+  ) {
+  }
+
+  ngOnInit() {
+    const backdrop = document.querySelector('.modal-backdrop');
+    if (backdrop) {
+      //backdrop.setAttribute('style', 'z-index: 20 !important'); // 변경할 z-index 값
+      backdrop.setAttribute('style', 'z-index: 1001 !important'); // 변경할 z-index 값
+    }
+  }
+  
 
   delete(model: any): void {
     this.database.delete(this.modelName, this.model.no, this.model.productImage).subscribe(this._onSuccess(), this._onError());

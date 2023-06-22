@@ -79,7 +79,7 @@
           <!-- <div class="invalid-feedback" *ngIf="submitted && productForm.controls.productImage.invalid"> -->
             <div class="invalid-feedback" *ngIf="submitted && productForm.controls['productImage'].invalid"></div>
             <!-- <div *ngIf="productForm.controls.productImage.errors.required">Photo is required</div> -->
-            <div *ngIf="productForm.controls['productImage'].errors">Photo is required</div>
+            <div *ngIf="productForm.controls['productImage'].errors">Image File is required</div>
           <div class="text-danger" *ngIf="uploadError">{{uploadError}}</div>
         </div>
       </div>

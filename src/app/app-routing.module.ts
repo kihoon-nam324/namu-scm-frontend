@@ -14,7 +14,7 @@ const routes: Routes = [
     // { path: '', redirectTo: 'total-summary', pathMatch: 'full' },
     //{ path: '', component: MainDashboardComponent, pathMatch: 'full' },
     { path: 'dashboard', component: MainDashboardComponent, pathMatch: 'full', canActivate: [SessionAuthGuardService] },
-    { path: '', redirectTo: 'login', pathMatch: 'full' },
+    { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     { path: 'login', component : LoginComponent },
     { path: 'verify-email', component : VerifyEmailComponent },
      {path: 'forgot-password', component : ForgotPasswordComponent },
