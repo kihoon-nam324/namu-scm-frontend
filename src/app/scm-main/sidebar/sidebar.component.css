@@ -4,8 +4,8 @@
     top: 51px;
     bottom: 0;
     left: 0;
-    /* z-index: 10; */
-    padding: 20px;
+    z-index: 10;
+    padding-top: 20px;
     overflow-x: hidden;
     overflow-y: auto;
     border-right: 1px solid #eee;
@@ -22,7 +22,7 @@
 
 .sidebar .nav-item {
     /* width: 100%; */
-    min-width: max-content;
+    /* min-width: max-content; */
 }
 
 .sidebar .nav-item + .nav-item {

@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
   //session$: Observable<boolean>;
   session$!: Observable<boolean>;
   sessionBtnName = 'NAVBAR.LOGIN';
-searchInput: any;
+  searchInput: any;
 
   constructor(
     public translate: TranslateService,

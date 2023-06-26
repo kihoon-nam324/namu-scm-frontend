@@ -12,10 +12,8 @@ export const environment = {
     messagingSenderId: "144316053830",
     appId: "1:144316053830:web:b183e1c0b832991b260d47"
   },
-  //apiBaseURI :'https://localhost:3443/api/',
-  //apiBaseURI :'https://namu-scm.ap-northeast-2.elasticbeanstalk.com/api/',
+  apiBaseURI :'http://localhost:8080/api/'
   //apiBaseURI :'https://namu-scm.n-e.kr/api/',
-  apiBaseURI :'http://localhost:8080/api/',
 };
 
 /*

@@ -1,3 +1,24 @@
 .container-fluid {
-    min-width: max-content;
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .container-fluid {
+        width:150%;
+        margin-left:15%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container-fluid {
+        width:150%;
+        margin-left:15%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container-fluid {
+        width:200%;
+        margin-left:15%;
+    }
 }

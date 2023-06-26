@@ -1,4 +1,17 @@
-.container-fluid2 {
-    float:left;
-    /* min-width: fit-content; */
+@media screen and (max-width: 1200px) {
+    .container-fluid2 {
+        margin-left:15%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container-fluid2 {
+        margin-left:20%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container-fluid2 {
+        margin-left:15%;
+    }
 }

@@ -90,6 +90,7 @@
         "DELETE": "삭제",
         "SELECT": "선택",
         "PRODUCT_NAME": "상품명",
+        "PRODUCT_CATEGORY": "상품카테고리",
         "PRODUCT_UNIT_PRICE": "상품단가",
         "PRODUCT_COUNT": "상품개수",
         "PRODUCT_STATUS": "상품현황",

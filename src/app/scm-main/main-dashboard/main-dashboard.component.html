@@ -1,4 +1,4 @@
-<div class="container-fluid2 ml-3"> 
+<div class="container-fluid2 mt-2"> 
   <h4>{{ 'MAIN_DASHBOARD.PRODUCT_MANAGEMENT_CHART' | translate }}</h4>
   <div class="row mb-5">
     <div class="chart" *ngIf="fetchBarChartData">
@@ -10,7 +10,7 @@
   <div class="row">
     <div class="chart" *ngIf="fetchPieChartData">
       <!-- <canvas baseChart [data]="pieData" [labels]="pieChartLabels" [chartType]="'pie'" width="600"></canvas> -->
-      <canvas baseChart [type]="'pie'" [datasets]="pieDataSets" [labels]="pieChartLabels" width="600" height="200"></canvas>
+      <canvas baseChart [type]="'pie'" [datasets]="pieDataSets" [labels]="pieChartLabels" width="450" height="450"></canvas>
     </div>
   </div>
 </div>

@@ -6,11 +6,16 @@
       class="btn btn-warning mr-2"
       #selectedLang
       (change)="switchLang(selectedLang.value)">
+      <!-- <option *ngFor="let language of translate.getLangs()"
+        [value]="language"
+        [selected]="language === translate.currentLang">
+        {{ language.toUpperCase() }} 
+      </option> -->
       <option *ngFor="let language of translate.getLangs()"
         [value]="language"
         [selected]="language === translate.currentLang">
         {{ language.toUpperCase() }} 
-        </option>
+      </option>
     </select>
     <button class="btn btn-warning mr-2"
       routerLink="/product-list/product/0" [queryParams]="{action: 'create'}">

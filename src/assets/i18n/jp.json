@@ -90,6 +90,7 @@
         "DELETE": "解除",
         "SELECT": "選択",
         "PRODUCT_NAME": "商品名",
+        "PRODUCT_CATEGORY": "商品カテゴリー",
         "PRODUCT_UNIT_PRICE": "商品価格",
         "PRODUCT_COUNT": "商品数",
         "PRODUCT_STATUS": "商品ステータス",
