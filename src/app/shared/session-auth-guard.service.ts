@@ -14,23 +14,13 @@ export class SessionAuthGuardService {
     private translate: TranslateService) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    let emailVerified = localStorage.getItem('emailVerified');
     let token = localStorage.getItem('token');
-
-    //if ( if (token === "false" || (emailVerified === null || emailVerified === "false")) { || emailVerified === "false") {
-    if ((token === "false" || emailVerified === "false")) {  
-      this.toastr.error(`${this.translate.instant('MESSAGE.TRY_LOGIN')}`
-          , `${this.translate.instant('MESSAGE.ERROR')}`);
-          this.router.navigate(['/']);
-    }
 
     return this.afAuth.authState
       .pipe(take(1))
       .pipe(map(user => !!user))
       .pipe(tap(authenticated => {
-        if (!authenticated) {
-          // this.toastr.error('ログインしてください', '[エラー]');
-          // this.toastr.error('로그인하세요', '[에러]');
+        if (!authenticated || !token) {
           this.toastr.error(`${this.translate.instant('MESSAGE.TRY_LOGIN')}`
           , `${this.translate.instant('MESSAGE.ERROR')}`);
           this.router.navigate(['/']);

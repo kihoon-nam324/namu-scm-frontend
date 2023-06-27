@@ -35,14 +35,27 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-    let emailVerified = localStorage.getItem('emailVerified');
+    let token = localStorage.getItem('token');
+
+    console.log("test");
+    this.session$ = this.afAuth.authState.pipe(map(user => !!user));
+    // this.session$.subscribe(auth => this.sessionBtnName = auth && (emailVerified || emailVerified === "true") ? 'NAVBAR.LOGOUT' : 'NAVBAR.LOGIN');
+    this.session$.subscribe(auth => {
+      if (auth && token) {  
+        this.sessionBtnName = 'NAVBAR.LOGOUT';
+      } else {
+        this.sessionBtnName = 'NAVBAR.LOGIN';
+      }
+    });
+  }
+
+  ngOnChanges(){
     let token = localStorage.getItem('token');
 
     this.session$ = this.afAuth.authState.pipe(map(user => !!user));
     // this.session$.subscribe(auth => this.sessionBtnName = auth && (emailVerified || emailVerified === "true") ? 'NAVBAR.LOGOUT' : 'NAVBAR.LOGIN');
     this.session$.subscribe(auth => {
-      //if (auth && (emailVerified || emailVerified === "true")) {
-      if (auth && (token === "true" || emailVerified === "true")) {  
+      if (auth && token) {  
         this.sessionBtnName = 'NAVBAR.LOGOUT';
       } else {
         this.sessionBtnName = 'NAVBAR.LOGIN';
@@ -56,7 +69,6 @@ export class NavbarComponent implements OnInit {
         //this.afAuth.signOut();
         this.afAuth.signOut().then( () => {
           localStorage.removeItem('token');
-          localStorage.removeItem('emailVerified');
           this.router.navigate(['/login']);
         }, err => {
           this.toastr.error(`${err.message}`
