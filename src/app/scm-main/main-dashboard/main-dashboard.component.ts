@@ -118,14 +118,9 @@ export class MainDashboardComponent implements OnInit {
     });
 
     //this.barChartOptions = { scales: { xAxes: [{ ticks: { max: maxNum, min: 0, stepSize: 1 } }] } };
-    this.barChartOptions = { 
-      scales: {
-        x: {
-            grid: {
-              offset: true
-            }
-        }
-      }  
+    this.barChartOptions = {
+      indexAxis: 'y', // <-- here
+      responsive: true
     };
   }
 

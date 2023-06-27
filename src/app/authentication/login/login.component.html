@@ -1,7 +1,7 @@
 <div class="container-fluid">
-    <div class="row mt-5">
+    <div class="row col-6 mt-5 ml-auto mr-auto">
         <div class="col"></div>
-        <div class="col-4">
+        <div class="col-12">
             <div class="card shadow">
                 <div class="card-body">
                     <form>
@@ -19,16 +19,16 @@
                         <button type="button" class="btn btn-info" (click)="login()">{{ 'LOGIN.LOGIN' | translate }}</button>
                         <!-- <button type="button" class="btn btn-info">{{ 'LOGIN.LOGIN' | translate }}</button> -->
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-6 d-inline-block">
                                 <!-- <a href="/register" style="text-decoration: none;">{{ 'LOGIN.NEED_ACCOUNT' | translate }}</a> -->
                                 <a routerLink="/register" routerLinkActive="active" style="text-decoration: none;">{{ 'LOGIN.NEED_ACCOUNT' | translate }}</a>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-6 d-inline-block">
                                 <!-- <a href="/forgot-password" class="text-dark" style="text-decoration: none;">{{ 'LOGIN.FORGOT_PASSWORD' | translate }}</a> -->
                                 <a routerLink="/forgot-password" routerLinkActive="active" class="text-dark" style="text-decoration: none;">{{ 'LOGIN.FORGOT_PASSWORD' | translate }}</a>
                             </div>
                         </div>
-                        <!-- <div class="row mt-2 ml-auto">
+                        <div class="row mt-2 ml-auto">
                             <a (click)="signInWithGoogle()" style="text-decoration: none;cursor: pointer;">
                                 <div class="card shadow text-center">
                                     <div class="card-body">
@@ -36,7 +36,7 @@
                                     </div>
                                 </div>
                             </a>
-                        </div> -->
+                        </div>
                     </form>
                 </div>
             </div>

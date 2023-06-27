@@ -18,7 +18,7 @@ export class AuthService {
   // login method
   login(email : string, password : string) {
     this.fireauth.signInWithEmailAndPassword(email,password).then( res => {
-      localStorage.setItem('token','true');
+      //localStorage.setItem('token','true');
 
       if(res.user?.emailVerified == true){
         localStorage.setItem('emailVerified', 'true');
@@ -79,7 +79,7 @@ export class AuthService {
   sendEmailVerification(user : any) {
     user.sendEmailVerification().then((res : any) => {
       this.fireauth.signOut();
-      localStorage.removeItem('token');
+      //localStorage.removeItem('token');
       this.router.navigate(['/verify-email']);
     }, (err: any) => {
       //alert('Something went wrong. Not able to send mail to your email');

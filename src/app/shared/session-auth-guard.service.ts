@@ -15,12 +15,10 @@ export class SessionAuthGuardService {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     let emailVerified = localStorage.getItem('emailVerified');
-    if (emailVerified === null) {
-      this.toastr.error(`${this.translate.instant('MESSAGE.TRY_LOGIN')}`
-          , `${this.translate.instant('MESSAGE.ERROR')}`);
-          this.router.navigate(['/']);
-    }
-    else if (emailVerified === "false") {
+    let token = localStorage.getItem('token');
+
+    //if ( if (token === "false" || (emailVerified === null || emailVerified === "false")) { || emailVerified === "false") {
+    if ((token === "false" || emailVerified === "false")) {  
       this.toastr.error(`${this.translate.instant('MESSAGE.TRY_LOGIN')}`
           , `${this.translate.instant('MESSAGE.ERROR')}`);
           this.router.navigate(['/']);

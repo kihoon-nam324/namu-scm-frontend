@@ -38,7 +38,14 @@ export class NavbarComponent implements OnInit {
     let emailVerified = localStorage.getItem('emailVerified');
   
     this.session$ = this.afAuth.authState.pipe(map(user => !!user));
-    this.session$.subscribe(auth => this.sessionBtnName = auth && (emailVerified || emailVerified === "true") ? 'NAVBAR.LOGOUT' : 'NAVBAR.LOGIN');
+    // this.session$.subscribe(auth => this.sessionBtnName = auth && (emailVerified || emailVerified === "true") ? 'NAVBAR.LOGOUT' : 'NAVBAR.LOGIN');
+    this.session$.subscribe(auth => {
+      if (auth && (emailVerified || emailVerified === "true")) {
+        this.sessionBtnName = 'NAVBAR.LOGOUT';
+      } else {
+        this.sessionBtnName = 'NAVBAR.LOGIN';
+      }
+    });
   }
 
   checkSession() {

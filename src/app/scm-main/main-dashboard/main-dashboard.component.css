@@ -1,3 +1,7 @@
+.container-fluid2 {
+    margin-left:3%;
+}
+
 @media screen and (max-width: 1200px) {
     .container-fluid2 {
         margin-left:15%;
@@ -6,7 +10,7 @@
 
 @media screen and (max-width: 768px) {
     .container-fluid2 {
-        margin-left:20%;
+        margin-left:15%;
     }
 }
 
