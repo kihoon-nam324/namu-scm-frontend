@@ -38,3 +38,43 @@
 .row > .modify-detail-content {
   padding-right:0px;
 }
+
+@media screen and (max-width: 1200px) {
+  .card{
+    min-width:1200px;
+  }
+
+  /* .container-fluid{
+    min-width:1200px;
+  } */
+}
+
+@media screen and (max-width: 768px) {
+  .card{
+    min-width:768px;
+  }
+  
+  /* .container-fluid{
+    min-width:768px;
+  } */
+}
+
+@media screen and (max-width: 576px) {
+  .card{
+    min-width:576px;
+  }
+  
+  /* .container-fluid{
+    min-width:576px;
+  } */
+}
+
+@media screen and (max-width: 280px) {
+  .card{
+    min-width:280px;
+  }
+  
+  /* .container-fluid{
+    min-width:280px;
+  } */
+}

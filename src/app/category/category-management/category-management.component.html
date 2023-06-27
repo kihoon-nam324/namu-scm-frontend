@@ -14,21 +14,23 @@
         </div>
       </div>
   </div>
-  <div class="container-fluid-2 my-4">
-    <h4>{{ 'CATEGORY_MANAGEMENT.CATEGORY_LIST' | translate }}</h4>
+  <div class="container-fluid-2 my-3">
+    <h4 class="mb-4">{{ 'CATEGORY_MANAGEMENT.CATEGORY_LIST' | translate }}</h4>
     <div class="row">
-      <div class="col-12 text-right">
-        <!-- <span>全体カテゴリ数: {{totalItemCnt}}</span> -->
+      <!-- <div class="col-12 text-right"> -->
+      <!-- <div class="col-13 ml-3"></div>
         <span>{{ 'CATEGORY_MANAGEMENT.CATEGORY_TOTAL_COUNT' | translate }}: {{totalItemCnt}}</span>
-      </div>
+      </div> -->
     </div>
     <div class="row">
-      <div class="col-12">
+      <div class="col-13 ml-3"></div>
+        <span>{{ 'CATEGORY_MANAGEMENT.CATEGORY_TOTAL_COUNT' | translate }}: {{totalItemCnt}}</span>
+      </div>
+      <div class="col-13">
         <scm-category-item *ngFor="let category of categories" [category]="category"></scm-category-item>
       </div>
     </div>
     <div class="row justify-content-center mt-4">
       <ngb-pagination [pageSize]="pageSize" [collectionSize]="totalItemCnt" [maxSize]="10" [ellipses]="false" [page]="pageNo" (pageChange)="pageNoChanged($event)"></ngb-pagination>
     </div>
-  </div>
 </div>

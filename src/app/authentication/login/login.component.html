@@ -14,7 +14,7 @@
                         </div>
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label">{{ 'LOGIN.PASSWORD' | translate }}</label>
-                          <input type="password" class="form-control" name="password" [(ngModel)]="password">
+                          <input type="password" class="form-control" name="password" [(ngModel)]="password"  (keyup.enter)="login()">
                         </div>
                         <button type="button" class="btn btn-info" (click)="login()">{{ 'LOGIN.LOGIN' | translate }}</button>
                         <!-- <button type="button" class="btn btn-info">{{ 'LOGIN.LOGIN' | translate }}</button> -->

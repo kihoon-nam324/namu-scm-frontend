@@ -20,6 +20,12 @@
 @media screen and (max-width: 576px) {
     .container-fluid {
         width:200%;
-        margin-left:15%;
+        margin-left:20%;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .container-fluid {
+        margin-left:20%;
     }
 }

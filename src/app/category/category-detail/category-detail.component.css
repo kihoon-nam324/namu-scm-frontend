@@ -19,3 +19,9 @@ form {
         margin-left:20%;
     }
 }
+
+@media screen and (max-width: 280px) {
+    form {
+        margin-left:20%;
+    }
+}
